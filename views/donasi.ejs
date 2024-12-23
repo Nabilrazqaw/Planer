@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+        <title>Planer - Plastic Ocean Recovery</title>
+        <link rel="stylesheet" href="/styles.css">
+        <link rel="website icon" type="png"
+        href="/image/logonew.png">
+        <style>
+            /* Reset dan base styles */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+    
+            /* Container Form */
+            .donation-container {
+                background-color: white;
+                border-radius: 12px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+                width: 100%;
+                max-width: 450px;
+                padding: 30px;
+                transition: transform 0.3s ease;
+            }
+    
+            .donation-container:hover {
+                transform: scale(1.02);
+            }
+    
+            /* Header */
+            .donation-header {
+                text-align: center;
+                margin-bottom: 25px;
+                color: #2c3e50;
+            }
+    
+            .donation-header h2 {
+                font-size: 24px;
+                font-weight: bold;
+                color: #4a90e2;
+            }
+    
+            .donation-header p {
+                color: #7f8c8d;
+                margin-top: 10px;
+            }
+    
+            /* Form Elements */
+            .form-group {
+                margin-bottom: 20px;
+            }
+    
+            .form-group label {
+                display: block;
+                margin-bottom: 8px;
+                color: #34495e;
+                font-weight: 600;
+            }
+    
+            .form-control {
+                width: 100%;
+                padding: 12px 15px;
+                border: 2px solid #e0e0e0;
+                border-radius: 8px;
+                font-size: 16px;
+                transition: all 0.3s ease;
+            }
+    
+            .form-control:focus {
+                outline: none;
+                border-color: #3498db;
+                box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+            }
+    
+            /* Donation Amount Buttons */
+            .donation-amounts {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 20px;
+            }
+    
+            .amount-btn {
+                background-color: #f1f3f5;
+                border: none;
+                padding: 10px 15px;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                color: #2c3e50;
+            }
+    
+            .amount-btn:hover, .amount-btn.selected {
+                background-color: #4a90e2;
+                color: white;
+            }
+    
+            /* Submit Button */
+            .btn-donate {
+                width: 100%;
+                padding: 15px;
+                background-color: #4a90e2;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                font-size: 18px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+    
+            .btn-donate:hover {
+                background-color: #2980b9;
+            }
+    
+            /* Responsive */
+            @media (max-width: 480px) {
+                .donation-container {
+                    width: 95%;
+                    margin: 20px;
+                    padding: 20px;
+                }
+    
+                .donation-amounts {
+                    flex-wrap: wrap;
+                    gap: 10px;
+                }
+    
+                .amount-btn {
+                    flex-grow: 1;
+                    margin-bottom: 10px;
+                }
+            }
+    
+            /* Animasi */
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+    
+            .donation-container {
+                animation: fadeIn 0.5s ease;
+            }
+        </style>
+    </head>
+    <body class="">    
+        <%- include('partials/header', {
+        }) %>
+        <br><br><br>
+        <div class="home" style="padding: 20px;">
+        <div class="donation-container">
+            <div class="donation-header">
+                <h2>Let's Donate</h2>
+                <p>help us make a change</p>
+            </div>
+    
+            <form id="donationForm">
+                <div class="donation-amounts">
+                    <button type="button" class="amount-btn" data-amount="50000">Rp 50K</button>
+                    <button type="button" class="amount-btn" data-amount="100000">Rp 100K</button>
+                    <button type="button" class="amount-btn" data-amount="250000">Rp 250K</button>
+                    <button type="button" class="amount-btn" data-amount="500000">Rp 500K</button>
+                </div>
+    
+                <div class="form-group">
+                    <label for="customAmount">Other Donation Amount
+
+                    </label>
+                    <input 
+                        type="number" 
+                        id="customAmount" 
+                        name="amount" 
+                        class="form-control" 
+                        placeholder="Enter the donation amount"
+                        min="10000"
+                    >
+                </div>
+    
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        class="form-control" 
+                        placeholder="Your name"
+                        required
+                    >
+                </div>
+    
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        class="form-control" 
+                        placeholder="email@ex.com"
+                        required
+                    >
+                </div>
+    
+                <button type="submit" class="btn-donate">Make a donation right now</button>
+            </form>
+        </div>
+    </div>
+
+
+        <%- include('partials/footer', {
+          }) %>
+        <script>
+             document.getElementById('donationForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            
+            try {
+                const response = await fetch('/donations/process', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(Object.fromEntries(formData))
+                });
+
+                const result = await response.json();
+                if (response.ok) {
+                    alert('Terima kasih atas donasi Anda!');
+                    window.location.reload();
+                } else {
+                    alert(result.error);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Terjadi kesalahan. Silakan coba lagi.');
+            }
+        });
+            $(document).ready(function(){
+            $('.slick-slider').slick({
+            dots: true,
+            infinite: true,
+            speed: 800,
+            fade: true,
+            cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
+            autoplay: true,
+            autoplaySpeed: 5000,
+            pauseOnHover: false,
+            arrows: true,
+            draggable: true,
+            swipe: true,
+            touchThreshold: 10,
+            waitForAnimate: true,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false
+                    }
+                }
+            ]
+        });
+
+        window.onscroll = function() {
+        const navbar = document.getElementById("navbar");
+        
+        if (window.scrollY > 0) { // Jika posisi scroll lebih dari 0
+            navbar.classList.add("scrolled");
+        } else { // Jika posisi scroll di bagian atas halaman
+            navbar.classList.remove("scrolled");
+        }
+    };
+        // Add smooth transition for slide content
+        $('.slick-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+            $(this).find('.slide-content').css('opacity', '0');
+        });
+        
+        $('.slick-slider').on('afterChange', function(event, slick, currentSlide){
+            $(this).find('.slick-active .slide-content').css('opacity', '1');
+        });
+        });
+
+          // Script untuk memilih jumlah donasi
+          document.querySelectorAll('.amount-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Hapus kelas 'selected' dari semua tombol
+                document.querySelectorAll('.amount-btn').forEach(btn => {
+                    btn.classList.remove('selected');
+                });
+
+                // Tambahkan kelas 'selected' ke tombol yang diklik
+                this.classList.add('selected');
+
+                // Isi input jumlah donasi
+                document.getElementById('customAmount').value = this.dataset.amount;
+            });
+        });
+
+        // Validasi form
+        document.getElementById('donationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const amount = document.getElementById('customAmount').value;
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+
+            if (amount < 10000) {
+                alert('Minimal donasi adalah Rp 10.000');
+                return;
+            }
+
+            // Contoh pengiriman data (sesuaikan dengan backend Anda)
+            alert(`Terima kasih, ${name}! Donasi Rp ${amount} sedang diproses.`);
+        });
+        </script>
+    </body>
+</html>

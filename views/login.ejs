@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>Login</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="website icon" type="png"
+        href="/image/logonew.png">
+</head>
+<body class="home">
+    <nav class="navbar" id="navbar">
+        <a href="#">
+            <img src="/image/logonew.png" class="navbar-logo container-fluid" alt="logo">
+        </a>
+        <a href="/auth/home">Home</a>
+            <a href="/auth/register" class="button" style="float: right;">Register</a>
+    </nav>
+    <br>
+    <br>
+    <br>
+    
+    <div class="login">
+        <img src="/image/logonew.png" style="width: 150px;">
+        <br>
+        <h2>Login</h2>
+    <form action="/auth/login" method="POST">
+        <div class="form-group">
+            <label>Username:</label>
+            <input type="text" name="username" placeholder="ex: Nabilrazqa13" required>
+        </div>
+        <div class="form-group">
+            <label>Password:</label>
+            <input type="password" name="password" placeholder="write your secret here" required>
+        </div>
+        <button type="submit" class="btn">Login</button>
+    </form>
+    <br>
+    <br>
+    <p>Don't have an account? <a href="/auth/register">Register here</a></p>
+</div>
+</body>
+</html>

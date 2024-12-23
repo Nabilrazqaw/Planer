@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <title>Planer - Plastic Ocean Recovery</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="website icon" type="png"
+    href="/image/logonew.png">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .forum-header {
+            background-color: #2980b9;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .discussion-thread {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        .user-post {
+            display: flex;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 15px;
+        }
+        .user-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #3498db;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        .post-content {
+            flex-grow: 1;
+        }
+        .post-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        .reply-form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        textarea {
+            width: 100%;
+            min-height: 120px;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+        }
+        .submit-btn {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .submit-btn:hover {
+            background-color: #2ecc71;
+        }
+        .topic-tags {
+            display: flex;
+            margin-top: 10px;
+        }
+        .tag {
+            background-color: #3498db;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            margin-right: 10px;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <%- include('partials/header', {
+    }) %>
+<br><br>
+    <div class="container">
+        <div class="forum-header">
+            <h1>Marine Waste Discussion Forum</h1>
+            <p>Together, Let's Protect Our Oceans</p>
+        </div>
+
+        <div class="discussion-thread">
+            <div class="topic-tags">
+                <span class="tag">Ocean Pollution</span>
+                <span class="tag">Sustainability</span>
+            </div>
+
+            <div class="user-post">
+                <div class="user-avatar">JS</div>
+                <div class="post-content">
+                    <h3>John Smith</h3>
+                    <p>What strategies can we implement to reduce plastic waste in our oceans? I've been researching the impact of marine pollution and would love to hear everyone's thoughts.</p>
+                    <div class="post-actions">
+                        <span>5 hours ago</span>
+                        <span>Replies (3)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="user-post">
+                <div class="user-avatar" style="background-color: #e74c3c;">EG</div>
+                <div class="post-content">
+                    <h3>Emma Green</h3>
+                    <p>I believe community cleanup initiatives and strict regulations on single-use plastics are crucial. We need a multi-pronged approach to tackle marine waste effectively.</p>
+                    <div class="post-actions">
+                        <span>3 hours ago</span>
+                        <span>Replies (2)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="user-post">
+                <div class="user-avatar" style="background-color: #27ae60;">MP</div>
+                <div class="post-content">
+                    <h3>Marcus Peterson</h3>
+                    <p>Has anyone looked into innovative recycling technologies? I recently read about new methods of converting ocean plastics into reusable materials.</p>
+                    <div class="post-actions">
+                        <span>1 hour ago</span>
+                        <span>Replies (1)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="reply-form">
+            <h3>Add Your Comment</h3>
+            <textarea placeholder="Share your thoughts on marine waste and ocean conservation..."></textarea>
+            <button class="submit-btn">Submit Comment</button>
+        </div>
+    </div>
+    <br>
+    <%- include('partials/footer', {
+    }) %>
+    <script>
+        $(document).ready(function(){
+            $('.slick-slider').slick({
+            dots: true,
+            infinite: true,
+            speed: 800,
+            fade: true,
+            cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
+            autoplay: true,
+            autoplaySpeed: 5000,
+            pauseOnHover: false,
+            arrows: true,
+            draggable: true,
+            swipe: true,
+            touchThreshold: 10,
+            waitForAnimate: true,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false
+                    }
+                }
+            ]
+        });
+    
+        window.onscroll = function() {
+        const navbar = document.getElementById("navbar");
+        
+        if (window.scrollY > 0) { // Jika posisi scroll lebih dari 0
+            navbar.classList.add("scrolled");
+        } else { // Jika posisi scroll di bagian atas halaman
+            navbar.classList.remove("scrolled");
+        }
+        };
+    
+            $(document).ready(function(){
+                $('.plastic-grid').slick({
+                    dots: true,
+                    infinite: true,
+                    speed: 500,
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 900,
+                    responsive: [
+                        {
+                            breakpoint: 1024,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 1
+                            }
+                        },
+                        {
+                            breakpoint: 600,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        }
+                    ]
+                });
+            });
+    
+                $(document).ready(function(){
+                $('.slick-slider').slick({
+                dots: true,
+                infinite: true,
+                speed: 800,
+                fade: true,
+                cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
+                autoplay: true,
+                autoplaySpeed: 5000,
+                pauseOnHover: false,
+                arrows: true,
+                draggable: true,
+                swipe: true,
+                touchThreshold: 10,
+                waitForAnimate: true,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            arrows: false
+                        }
+                    }
+                ]
+            });
+    
+            window.onscroll = function() {
+            const navbar = document.getElementById("navbar");
+            
+            if (window.scrollY > 0) { // Jika posisi scroll lebih dari 0
+                navbar.classList.add("scrolled");
+            } else { // Jika posisi scroll di bagian atas halaman
+                navbar.classList.remove("scrolled");
+            }
+        };
+            // Add smooth transition for slide content
+            $('.slick-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+                $(this).find('.slide-content').css('opacity', '0');
+            });
+            
+            $('.slick-slider').on('afterChange', function(event, slick, currentSlide){
+                $(this).find('.slick-active .slide-content').css('opacity', '1');
+            });
+            });
+    
+        // Add smooth transition for slide content
+        $('.slick-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+            $(this).find('.slide-content').css('opacity', '0');
+        });
+        
+        $('.slick-slider').on('afterChange', function(event, slick, currentSlide){
+            $(this).find('.slick-active .slide-content').css('opacity', '1');
+        });
+        });
+        </script>
+</body>
+</html>

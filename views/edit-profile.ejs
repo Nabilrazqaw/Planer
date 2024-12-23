@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+        <title>Planer - Plastic Ocean Recovery</title>
+        <link rel="stylesheet" href="/styles.css">
+        <link rel="website icon" type="png"
+        href="/image/logonew.png"> 
+</head>
+<body>
+    <%- include('partials/header', {
+    }) %>
+
+<br><br>
+    <div class="container" style="width: 80%;">
+        <div class="nav-links">
+            <a href="/profile" class="btn">Kembali ke Profile</a>
+        </div>
+
+        <h2>Edit Profile</h2>
+        
+        <form action="/auth/update-profile" method="POST">
+            <div class="form-group">
+                <label>Full name:</label>
+                <input type="text" name="name" value="<%= user.name || '' %>">
+            </div>
+
+            <div class="form-group">
+                <label>Address:</label>
+                <textarea name="alamat"><%= user.alamat || '' %></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Phone Number:</label>
+                <input type="tel" name="nomor_telepon" value="<%= user.nomor_telepon || '' %>">
+            </div>
+
+            <button type="submit" class="btn">Save changes </button>
+            <a href="/profile" class="btn btn-cancel">Cancel</a>
+        </form>
+    </div>
+    
+    <%- include('partials/footer', {
+    }) %>
+
+    <script>
+        $(document).ready(function(){
+        $('.slick-slider').slick({
+        dots: true,
+        infinite: true,
+        speed: 800,
+        fade: true,
+        cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
+        autoplay: true,
+        autoplaySpeed: 5000,
+        pauseOnHover: false,
+        arrows: true,
+        draggable: true,
+        swipe: true,
+        touchThreshold: 10,
+        waitForAnimate: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false
+                }
+            }
+        ]
+    });
+
+    window.onscroll = function() {
+    const navbar = document.getElementById("navbar");
+    
+    if (window.scrollY > 0) { // Jika posisi scroll lebih dari 0
+        navbar.classList.add("scrolled");
+    } else { // Jika posisi scroll di bagian atas halaman
+        navbar.classList.remove("scrolled");
+    }
+};
+
+
+
+    // Add smooth transition for slide content
+    $('.slick-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        $(this).find('.slide-content').css('opacity', '0');
+    });
+    
+    $('.slick-slider').on('afterChange', function(event, slick, currentSlide){
+        $(this).find('.slick-active .slide-content').css('opacity', '1');
+    });
+    });
+    </script>
+</body>
+</html>

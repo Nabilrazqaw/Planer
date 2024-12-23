@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+        <title>Planer - Plastic Ocean Recovery</title>
+        <link rel="stylesheet" href="/styles.css">
+        <link rel="website icon" type="png"
+        href="/image/logonew.png">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .challenge-header {
+            background-color: #07575b;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .challenge-card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .challenge-image {
+            max-width: 300px;
+            border-radius: 10px;
+        }
+        .challenge-content {
+            flex: 1;
+        }
+        .challenge-button {
+            display: inline-block;
+            background-color: #66a5ad;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        @media (max-width: 768px) {
+            .challenge-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <%- include('partials/header', {
+    }) %>
+
+    <br><br><br>
+    <div class="container">
+        <div class="challenge-header">
+            <h1>30 Days Plastic Reduction Challenge</h1>
+            <p style="color: #f0f4f8; justify-items: center;">Small steps, big impact for our oceans</p>
+        </div>
+
+        <div class="challenge-card">
+            <img src="/image/tantangan1.webp" alt="Plastic Reduction Challenge" class="challenge-image">
+            <div class="challenge-content">
+                <h2>Reduce Single-Use Plastics</h2>
+                <p>Join our 30-day challenge to minimize single-use plastic consumption. Track your progress, replace plastic items with sustainable alternatives, and help protect our marine ecosystems.</p>
+                <ul>
+                    <li>Replace plastic bags with reusable bags</li>
+                    <li>Use a refillable water bottle</li>
+                    <li>Avoid single-use plastic utensils</li>
+                    <li>Choose products with minimal plastic packaging</li>
+                </ul>
+                <a href="#" class="challenge-button">Start Challenge</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="challenge-header">
+            <h1>Beach Plastic Collection Challenge</h1>
+            <p>Protect our oceans, one kilogram at a time</p>
+        </div>
+
+        <div class="challenge-card">
+            <img src="/image/tantangan2.jpg" alt="Beach Plastic Collection" class="challenge-image">
+            <div class="challenge-content">
+                <h2>1 KG Beach Plastic Collection Challenge</h2>
+                <p>Join our mission to remove at least 1 kg of plastic waste from beaches and coastal areas. Your effort directly contributes to marine conservation and ecosystem protection.</p>
+                <ul>
+                    <li>Collect minimum 1 kg of plastic waste from beaches</li>
+                    <li>Document and log your collection</li>
+                    <li>Properly sort and recycle collected plastics</li>
+                    <li>Share your impact on social media</li>
+                </ul>
+                <div class="challenge-tips">
+                    <h3>Safety Tips:</h3>
+                    <p>Wear gloves, use trash grabbers, and follow local guidelines for beach cleanup.</p>
+                </div>
+                <a href="#" class="challenge-button">Start Beach Cleanup</a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <%- include('partials/footer', {
+    }) %>
+    <script>
+        $(document).ready(function(){
+        $('.slick-slider').slick({
+        dots: true,
+        infinite: true,
+        speed: 800,
+        fade: true,
+        cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
+        autoplay: true,
+        autoplaySpeed: 5000,
+        pauseOnHover: false,
+        arrows: true,
+        draggable: true,
+        swipe: true,
+        touchThreshold: 10,
+        waitForAnimate: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false
+                }
+            }
+        ]
+    });
+
+    window.onscroll = function() {
+    const navbar = document.getElementById("navbar");
+    
+    if (window.scrollY > 0) { // Jika posisi scroll lebih dari 0
+        navbar.classList.add("scrolled");
+    } else { // Jika posisi scroll di bagian atas halaman
+        navbar.classList.remove("scrolled");
+    }
+};
+
+
+
+    // Add smooth transition for slide content
+    $('.slick-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        $(this).find('.slide-content').css('opacity', '0');
+    });
+    
+    $('.slick-slider').on('afterChange', function(event, slick, currentSlide){
+        $(this).find('.slick-active .slide-content').css('opacity', '1');
+    });
+    });
+    </script>
+</body>
+</html>

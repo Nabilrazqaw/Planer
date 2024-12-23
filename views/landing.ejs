@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+        <title>Planer - Plastic Ocean Recovery</title>
+        <link rel="stylesheet" href="/styles.css">
+        <link rel="website icon" type="png"
+        href="/image/logonew.png">
+    </head>
+    <body>
+        <%- include('partials/header', {
+        }) %>
+
+        <div class="slick-slider">
+            <div class="slide">
+                <img src="/image/plastic3.jpg" alt="Image 1">
+                <div class="slide-content">
+                    <h1>Make movement for 
+                        <br>our earth</h1>
+                    <a href="/views/dashboard.ejs" class="btn btn-primary">Explore More</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="/image/plastic4.jpg" alt="Image 2">
+                <div class="slide-content">
+                    <h1>Create Your Own Small thing and effect the world</h1>
+                    <a href="/views/dashboard.ejs" class="btn btn-primary">Explore More</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="/image/plastic7.jpg" alt="Image 2">
+                <div class="slide-content">
+                    <h1>save the under the sea</h1>
+                    <a href="/views/dashboard.ejs" class="btn btn-primary">Explore More</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-section">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img src="/image/plastic1.jpg" alt="Recycling Network">
+                </div>
+                <div class="hero-text">
+                    <h1 style="text-align: center;">About us! <br>
+                        ──── ୨୧ ────</h1>
+                        <p class="hero-description"><span style="color: #27AE60;">Welcome to PlasticOceanRescue!</span> This is a website designed to reduce plastic waste in the oceans. Our mission is to restore the ocean to keep it clean, prevent more plastic from entering the sea, and educate the public about sustainable practices. Our main focus includes beach cleanups, recycling initiatives, and awareness campaigns. Rescue Our Ocean, Secure Our Future!</p>
+                       <div class="stats-container">
+                        <div class="stat-box">
+                            <h2>1M Kg+</h2>
+                            <p>Recycled Waste</p>
+                        </div>
+                        <div class="stat-box">
+                            <h2>398.000 ton</h2>
+                            <p>In 2022, it decreased by 35.36% from 2018.</p>
+                        </div>
+                        <div class="stat-box">
+                            <h2>56k + metric tons</h2>
+                            <p>Dumped into the sea every year</p>
+                        </div>
+                        <div class="stat-box">
+                            <h2>430 M ton plastic</h2>
+                            <p>Produced every year</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div>
+                    <img src="/image/information.png" width="50" height="50" style="border-radius: 5px; justify-content: center; align-items: center;" ></img>
+                </div>
+                    <a href="/auth/information" class="service-title">Information</a>
+                <p class="service-description">providing interesting information about plastic for you!.</p>
+            </div>
+            <div class="service-card">
+                <div>
+                    <img src="/image/location.png" width="45" height="60" style="border-radius: 5px; justify-content: center; align-items: center;" > </img>
+                </div>
+                <a href="/auth/map" class="service-title">Maps</a>
+                <p class="service-description">by looking at the map of plastic waste distribution in 2024, you might be concerned.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon company">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="50" height="50">
+                        <path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/>
+                    </svg>
+                </div>
+                <a href="/auth/Challenge" class="service-title">Challenge</a>
+
+                <p class="service-description">a challenging challenge for you who only do small things, can make an impact on the world!.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon event">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="50" height="50">
+                        <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/>
+                    </svg>
+                </div>
+                <a href="/auth/report" class="service-title">Discussion</a>
+
+                <p class="service-description">let's discuss, talk, and report to each other if there is a mountain of plastic waste
+
+                    .</p>
+            </div>
+        </div>
+
+        <div class="" style="padding: 100px;">
+                <h2 class="section-title" style="justify-content: center; align-items: center;">Sustainable Development Goals: Protecting Our Oceans</h2>
+                <div class="sdg-content">
+                    <div class="sdg-image">
+                        <img src="/image/14life.png" alt="SDG 14: Life Below Water">
+                    </div>
+                    <div class="sdg-description">
+                        <h3>Goal 14: Life Below Water</h3>
+                        <p>The United Nations Sustainable Development Goal 14 focuses on conserving and sustainably using the oceans, seas, and marine resources 
+                            for sustainable development. Our mission at Plastic Ocean Rescue directly supports these critical global objectives.</p>
+                        
+                        <div class="sdg-targets">
+                            <h4>Key Targets Include:</h4>
+                            <ul>
+                                <li>Reduce marine pollution of all kinds, especially plastic from land-based activities</li>
+                                <li>Sustainably manage and protect marine and coastal ecosystems</li>
+                                <li>Minimize and address the impacts of ocean acidification</li>
+                                <li>Effectively regulate harvesting and end overfishing</li>
+                                <li>Conserve at least 10% of coastal and marine areas</li>
+                            </ul>
+                        </div>
+                        
+                        <p class="impact-statement">By participating in our initiatives, you're not just cleaning oceans—you're contributing to a 
+                            global movement to preserve marine life and ensure sustainable oceanic ecosystems for future generations.</p>
+                        
+                        <a href="/auth/information#sdgexpand" class="learn-more">
+                            Learn More About Ocean Conservation
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow-icon">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+        </div>
+
+        <%- include('partials/footer', {
+          }) %>
+        <script>
+            $(document).ready(function(){
+            $('.slick-slider').slick({
+            dots: true,
+            infinite: true,
+            speed: 800,
+            fade: true,
+            cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
+            autoplay: true,
+            autoplaySpeed: 5000,
+            pauseOnHover: false,
+            arrows: true,
+            draggable: true,
+            swipe: true,
+            touchThreshold: 10,
+            waitForAnimate: true,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false
+                    }
+                }
+            ]
+        });
+
+        window.onscroll = function() {
+        const navbar = document.getElementById("navbar");
+        
+        if (window.scrollY > 0) { // Jika posisi scroll lebih dari 0
+            navbar.classList.add("scrolled");
+        } else { // Jika posisi scroll di bagian atas halaman
+            navbar.classList.remove("scrolled");
+        }
+    };
+        // Add smooth transition for slide content
+        $('.slick-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+            $(this).find('.slide-content').css('opacity', '0');
+        });
+        
+        $('.slick-slider').on('afterChange', function(event, slick, currentSlide){
+            $(this).find('.slick-active .slide-content').css('opacity', '1');
+        });
+        });
+        </script>
+    </body>
+</html>

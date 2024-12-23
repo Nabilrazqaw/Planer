@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+        <title>Planer - Plastic Ocean Recovery</title>
+        <link rel="stylesheet" href="/styles.css">
+        <link rel="website icon" type="png"
+        href="/image/logonew.png"> 
+</head>
+<body>
+    <%- include('../partials/header', {
+    }) %>
+
+    <div class="home" style="padding: 10%;">
+    
+
+    <div class="container" style="width: 80%;">
+        <h1 style="color: #003b34;">Report Form</h1>
+        <form action="/auth/report" method="POST">
+            <label for="sector">Sector:</label>
+            <select name="sector"  required>
+                <option value="">Select a sector</option>
+                <option value="Beach">Beach</option>
+                <option value="River">River</option>
+                <option value="Lake">Lake</option>
+                <option value="Urban Area">Urban Area</option>
+                <option value="Forest">Forest</option>
+            </select><br><br>
+    
+            <label for="message">Message:</label>
+            <textarea name="message"required></textarea><br><br>
+    
+            <label for="location">Location:</label>
+            <input type="text" name="location"  required><br><br>
+    
+            <label for="report_date">Date:</label>
+            <input type="date" name="report_date" required><br><br>
+    
+            <label for="status">Status:</label>
+            <select name="status" required>
+                <option value="Pending">Pending</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Resolved">Resolved</option>
+            </select><br><br>
+            <button type="submit" class="btn">Save changes </button>
+        </form>
+    </div>
+</div>
+<br><br>
+    <h2>Existing Reports</h2>
+    
+    <% if (typeof reports !== 'undefined' && reports.length > 0) { %>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sector</th>
+                    <th>Message</th>
+                    <th>Location</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% reports.forEach(report => { %>
+                    <tr>
+                        <td><%= report.sector %></td>
+                        <td><%= report.message %></td>
+                        <td><%= report.location %></td>
+                        <td><%= report.report_date %></td>
+                        <td><%= report.status %></td>
+                        <td class="action-links">
+                            <a href="/edit/<%= report.id %>">Edit</a> | 
+                            <a href="/delete/<%= report.id %>" onclick="return confirm('Are you sure you want to delete this report?')">Delete</a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <div class="no-reports">
+            No reports found. Be the first to submit a report!
+        </div>
+    <% } %>
+
+    <script>
+        $(document).ready(function(){
+        $('.slick-slider').slick({
+        dots: true,
+        infinite: true,
+        speed: 800,
+        fade: true,
+        cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
+        autoplay: true,
+        autoplaySpeed: 5000,
+        pauseOnHover: false,
+        arrows: true,
+        draggable: true,
+        swipe: true,
+        touchThreshold: 10,
+        waitForAnimate: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false
+                }
+            }
+        ]
+    });
+
+    window.onscroll = function() {
+    const navbar = document.getElementById("navbar");
+    
+    if (window.scrollY > 0) { // Jika posisi scroll lebih dari 0
+        navbar.classList.add("scrolled");
+    } else { // Jika posisi scroll di bagian atas halaman
+        navbar.classList.remove("scrolled");
+    }
+};
+
+
+
+    // Add smooth transition for slide content
+    $('.slick-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        $(this).find('.slide-content').css('opacity', '0');
+    });
+    
+    $('.slick-slider').on('afterChange', function(event, slick, currentSlide){
+        $(this).find('.slick-active .slide-content').css('opacity', '1');
+    });
+    });
+    </script>
+    
+    <%- include('../partials/footer', {
+    }) %>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Report</title>
+</head>
+<body>
+  <h1>Edit Report</h1>
+  <form action="/update/<%= report.id %>" method="POST">
+    <label for="sector">Sector:</label>
+    <input type="text" name="sector" id="sector" value="<%= report.sector %>" required><br><br>
+    <label for="message">Message:</label>
+    <textarea name="message" id="message" required><%= report.message %></textarea><br><br>
+    <label for="location">Location:</label>
+    <input type="text" name="location" id="location" value="<%= report.location %>" required><br><br>
+    <label for="report_date">Date:</label>
+    <input type="date" name="report_date" id="report_date" value="<%= report.report_date %>" required><br><br>
+    <label for="status">Status:</label>
+    <select name="status" id="status" required>
+      <option value="Pending" <% if (report.status === 'Pending') { %> selected <% } %>>Pending</option>
+      <option value="Resolved" <% if (report.status === 'Resolved') { %> selected <% } %>>Resolved</option>
+    </select><br><br>
+    <button type="submit" class="btn">Save changes </button>
+</form>
+    <button type="submit">Update</button>
+  </form>
+  <a href="/">Back to reports</a>
+  
+  <%- include('partials/footer', {
+}) %>
+</body>
+</html>

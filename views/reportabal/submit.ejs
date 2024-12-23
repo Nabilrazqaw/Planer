@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Report - Plastic Ocean Recovery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .navbar {
+            background-color: #ffffff;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: #003b34;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 500;
+        }
+
+        .navbar-logo {
+            height: 40px;
+            vertical-align: middle;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 100px auto 40px;
+            padding: 2rem;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #003b34;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        form {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: 'Lato', sans-serif;
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        select {
+            background-color: white;
+        }
+
+        button {
+            background-color: #003b34;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #002622;
+        }
+
+        .preview-container {
+            margin-top: 2rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+
+        .preview-title {
+            color: #003b34;
+            margin-bottom: 1rem;
+        }
+
+        .preview-content {
+            margin-bottom: 0.5rem;
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 80px 1rem 1rem;
+                padding: 1rem;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <a href="#">
+            <img src="/image/logonew.png" class="navbar-logo" alt="logo">
+        </a>
+        <a href="/auth/home">Home</a>
+        <a href="/auth/login">Information</a>
+        <a href="/auth/login">Maps</a>
+        <a href="/auth/login">Challenge</a>
+        <a href="/auth/report">Discussion</a>
+        <a href="/auth/games">Games</a>
+        <a href="/auth/siklus">Cycle</a>                
+        <a href="/auth/profile" class="button" style="float: right;">Profile</a>
+    </nav>
+
+    <div class="container">
+        <div class="success-message" id="successMessage">
+            Report submitted successfully!
+        </div>
+
+        <h1>Submit New Report</h1>
+        
+        <form id="reportForm" action="/submit-report" method="POST">
+            <div>
+                <label for="sector">Sector*</label>
+                <select name="sector" id="sector" required>
+                    <option value="">Select a sector</option>
+                    <option value="Beach">Beach</option>
+                    <option value="River">River</option>
+                    <option value="Lake">Lake</option>
+                    <option value="Urban Area">Urban Area</option>
+                    <option value="Forest">Forest</option>
+                </select>
+                <div class="error-message" id="sectorError"></div>
+            </div>
+
+            <div>
+                <label for="location">Location*</label>
+                <input type="text" id="location" name="location" required>
+                <div class="error-message" id="locationError"></div>
+            </div>
+
+            <div>
+                <label for="report_date">Date*</label>
+                <input type="date" id="report_date" name="report_date" required>
+                <div class="error-message" id="dateError"></div>
+            </div>
+
+            <div>
+                <label for="message">Description*</label>
+                <textarea id="message" name="message" placeholder="Please provide detailed information about the plastic pollution you observed..." required></textarea>
+                <div class="error-message" id="messageError"></div>
+            </div>
+
+            <div>
+                <label for="status">Status*</label>
+                <select name="status" id="status" required>
+                    <option value="Pending">Pending</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Resolved">Resolved</option>
+                </select>
+                <div class="error-message" id="statusError"></div>
+            </div>
+
+            <button type="submit">Submit Report</button>
+        </form>
+
+        <div class="preview-container" id="previewContainer" style="display: none;">
+            <h3 class="preview-title">Preview</h3>
+            <div id="preview"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('reportForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Reset error messages
+            document.querySelectorAll('.error-message').forEach(elem => elem.textContent = '');
+            
+            // Validate form
+            let isValid = true;
+            
+            const sector = document.getElementById('sector').value;
+            const location = document.getElementById('location').value;
+            const date = document.getElementById('report_date').value;
+            const message = document.getElementById('message').value;
+            
+            if (!sector) {
+                document.getElementById('sectorError').textContent = 'Please select a sector';
+                isValid = false;
+            }
+            
+            if (location.length < 3) {
+                document.getElementById('locationError').textContent = 'Location must be at least 3 characters long';
+                isValid = false;
+            }
+            
+            if (!date) {
+                document.getElementById('dateError').textContent = 'Please select a date';
+                isValid = false;
+            }
+            
+            if (message.length < 10) {
+                document.getElementById('messageError').textContent = 'Description must be at least 10 characters long';
+                isValid = false;
+            }
+            
+            if (isValid) {
+                // Show success message
+                document.getElementById('successMessage').style.display = 'block';
+                
+                // Show preview
+                const preview = document.getElementById('preview');
+                preview.innerHTML = `
+                    <div class="preview-content"><strong>Sector:</strong> ${sector}</div>
+                    <div class="preview-content"><strong>Location:</strong> ${location}</div>
+                    <div class="preview-content"><strong>Date:</strong> ${date}</div>
+                    <div class="preview-content"><strong>Description:</strong> ${message}</div>
+                    <div class="preview-content"><strong>Status:</strong> ${document.getElementById('status').value}</div>
+                `;
+                document.getElementById('previewContainer').style.display = 'block';
+                
+                // In a real application, you would submit the form to the server here
+                // this.submit();
+            }
+        });
+
+        // Add preview functionality while typing
+        const formInputs = document.querySelectorAll('input, textarea, select');
+        formInputs.forEach(input => {
+            input.addEventListener('input', updatePreview);
+        });
+
+        function updatePreview() {
+            const preview = document.getElementById('preview');
+            const previewContainer = document.getElementById('previewContainer');
+            
+            const sector = document.getElementById('sector').value;
+            const location = document.getElementById('location').value;
+            const date = document.getElementById('report_date').value;
+            const message = document.getElementById('message').value;
+            const status = document.getElementById('status').value;
+            
+            if (sector || location || date || message) {
+                preview.innerHTML = `
+                    <div class="preview-content"><strong>Sector:</strong> ${sector || '-'}</div>
+                    <div class="preview-content"><strong>Location:</strong> ${location || '-'}</div>
+                    <div class="preview-content"><strong>Date:</strong> ${date || '-'}</div>
+                    <div class="preview-content"><strong>Description:</strong> ${message || '-'}</div>
+                    <div class="preview-content"><strong>Status:</strong> ${status || '-'}</div>
+                `;
+                previewContainer.style.display = 'block';
+            } else {
+                previewContainer.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

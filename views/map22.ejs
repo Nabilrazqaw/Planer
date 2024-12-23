@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+        <title>Planer - Plastic Ocean Recovery</title>
+        <link rel="stylesheet" href="/styles.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+        <link rel="website icon" type="png"
+        href="/image/logonew.png">
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+            }
+            .leaflet-container {
+                height: 400px;
+                width: 600px;
+                max-width: 100%;
+                max-height: 100%;
+            }
+            
+            .earth-engine-container {
+                position: relative;
+                padding-bottom: 56.25%; /* 16:9 aspect ratio */
+                height: 0;
+                overflow: hidden;
+            }
+            
+            .earth-engine-container iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+        </style>
+</head>
+    <body>
+        <%- include('partials/header', {
+        }) %>
+
+        <div class="slick-slider">
+            <div class="slide">
+                <img src="/image/plastic11.jpg" alt="Image 1">
+                <div class="slide-content">
+                    <h1>Make movement for 
+                        <br>our earth</h1>
+                    <a href="/views/dashboard.ejs" class="btn btn-primary">Explore More</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="/image/plastic10.jpg" alt="Image 2">
+                <div class="slide-content">
+                    <h1>Create Your Own Small thing and effect the world</h1>
+                    <a href="#" class="btn btn-primary">Explore More</a>
+                </div>
+            </div>
+        </div>
+        
+        <div>
+            <h1 style="color: #003b34;">Map of the distribution of plastic waste using Google Earth Engine</h1>
+        </div>
+        <br>
+        <div class="earth-engine-container" style="width: 90%; margin: 20px auto; border-radius: 15px; overflow: hidden;">
+            <iframe 
+                src="https://bagasardi.projects.earthengine.app/view/sampah" 
+                width="100%" 
+                height="600px" 
+                style="border:none;"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div>
+            <h1 style="color: #003b34;">map of report data results</h1>
+        </div>
+        <div class="container" id="map" style="width: 90%; height: 500px; border-radius: 15px"></div>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+        <script>
+            const map = L.map('map').setView([-0.766579, 116.124653], 5);
+            const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(map);
+
+            
+        //Sumatra
+        var lokasi1 = L.marker([2.685994, 95.780521]).bindPopup("<a> Pulau Olong <p> Lokasi:  <br/>Pantai Along terletak di Kecamatan Salang, Kabupaten Simeulue, Aceh. <p> Jenis Penyu:  <br/>Penyu Lekang dan Penyu Belimbing. <p> Ancaman: Ancaman terhadap penyu di Pantai Along meliputi perburuan telur, degradasi habitat pantai akibat pembangunan, pencemaran laut, dan perubahan iklim yang mempengaruhi suhu dan kualitas air laut. <p> Upaya Konservasi: <br/>Pendidikan dan pemahaman masyarakat, penyelamatan telur penyu, penangkaran dan pelepasan tukik, serta patroli Pantai <a href='petaindopenyu.html#pantaialong'> Read more... </a> </a>").addTo(map);
+        var lokasi2 = L.marker([2.067611, 97.134390]).bindPopup("<a> Pantai Bangkaru  <p> Lokasi:  <br/>Pulau Bangkaru terletak di Kepulauan Banyak, Kabupaten Aceh Singkil, Provinsi Aceh. <p> Jenis Penyu: Penyu Belimbing, Penyu Hijau, dan Penyu Sisik.  <p> Ancaman:  <br/>Ancaman terhadap penyu di Pulau Bangkaru meliputi perburuan telur dan daging penyu. <p> Upaya Konservasi:  <br/>Pendirian kerambah penyu untuk melindungi telur-telur penyu dari predator dan pemburu, pemantauan dan perlindungan telur hingga menetas, pembatasan aktivitas wisata di beberapa area untuk tidak mengganggu lokasi perlindungan penyu. <a href='petaindopenyu.html#PantaiBangkabaru'> Read more... </a></a>").addTo(map);
+        var lokasi3 = L.marker([4.5113204, 95.7372655]).bindPopup("<a> Aoren Meubanja  <p>Lokasi: <br/> Aroen Meubanja terletak di Desa Keude Panga, Kecamatan Panga, Aceh Jaya, Provinsi Aceh.<p>Jenis Penyu: <br/> Penyu Belimbing dan Penyu Lekang.<p>Ancaman: <br/> Ancaman terhadap penyu di Aroen Meubanja meliputi pencurian telur dan perburuan.<p>Upaya Konservasi: <br/> Pengelolaan kawasan konservasi, pelepasan tukik kembali ke habitatnya, pendidikan masyarakat tentang pelestarian penyu, pengawasan terhadap aktivitas manusia di sekitar kawasan konservasi.<a href='petaindopenyu.html#aorenmeubanja'> Read More… </a></a>").addTo(map);
+        var lokasi4 = L.marker([2.777814, 95.979391]).bindPopup("<a> Pulau Simeulue  <p>Lokasi: <br/> Pulau Simeulue terletak di Aceh.<p>Jenis Penyu: <br/> Penyu Belimbing, Penyu Hijau, Penyu Lekang, Penyu Sisik.<p>Ancaman: <br/> Ancaman di pulau ini meliputi predator alami seperti biawak, kepiting pantai, pemburu telur.<p>Upaya Konservasi: <br/> Tempat penetasan telur penyu semi alami (hatchery), relokasi sarang, sosialisasi, pelatihan ranger (petugas). <a href='petaindopenyu.html#PulauSimeulue'> Read More… </a> </a>").addTo(map);
+        var lokasi5 = L.marker([1.904819, 98.549247]).bindPopup("<b> Pantai Binasi  </b>").addTo(map);
+        var lokasi6 = L.marker([-0.949286,100.141102]).bindPopup("<b> Pulau Pandan  </b>").addTo(map);
+        var lokasi7 = L.marker([-0.602432, 100.110059]).bindPopup("<b> Konservasi Penyu Pariaman </b>").addTo(map);
+        
+
+        map.on('click', onMapClick);
+        </script>
+
+
+
+        <div class="container-normal">
+            <div class="button-container">
+                <button>
+                    <a href="/auth/login" class="button" id="button">Explore More!</a>
+                </button>
+            </div>
+        </div>
+          
+    <%- include('partials/footer', {
+    }) %>
+    <script>
+        $(document).ready(function(){
+        $('.slick-slider').slick({
+        dots: true,
+        infinite: true,
+        speed: 800,
+        fade: true,
+        cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
+        autoplay: true,
+        autoplaySpeed: 5000,
+        pauseOnHover: false,
+        arrows: true,
+        draggable: true,
+        swipe: true,
+        touchThreshold: 10,
+        waitForAnimate: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false
+                }
+            }
+        ]
+    });
+
+    window.onscroll = function() {
+    const navbar = document.getElementById("navbar");
+    
+    if (window.scrollY > 0) { // Jika posisi scroll lebih dari 0
+        navbar.classList.add("scrolled");
+    } else { // Jika posisi scroll di bagian atas halaman
+        navbar.classList.remove("scrolled");
+    }
+};
+
+
+
+    // Add smooth transition for slide content
+    $('.slick-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        $(this).find('.slide-content').css('opacity', '0');
+    });
+    
+    $('.slick-slider').on('afterChange', function(event, slick, currentSlide){
+        $(this).find('.slick-active .slide-content').css('opacity', '1');
+    });
+    });
+    </script>
+    </body>
+</html>

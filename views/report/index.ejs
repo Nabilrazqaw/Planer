@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <title>Planer - Plastic Ocean Recovery</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="website icon" type="png"
+    href="/image/logonew.png">
+    <style>
+   /* Global Styles */
+
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #1abc9c, #16a085);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin-bottom: 10px;
+    font-size: 2.5em;
+    color: white;
+}
+
+header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* Report Section Styles */
+.report-section {
+    background-color: white;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.report-section:hover {
+    transform: translateY(-5px);
+}
+
+.report-section h2 {
+    color: #2980b9;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.statistic ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.statistic li {
+    background-color: #f4f9f9;
+    margin: 10px 0;
+    padding: 15px;
+    border-left: 5px solid #1abc9c;
+    border-radius: 5px;
+}
+
+/* Impact Graphic */
+.impact-graphic {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    margin: 20px 0;
+}
+
+/* Form Styles */
+.container {
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.container h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #2980b9;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #a0d2eb;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    border-color: #1abc9c;
+    outline: none;
+    box-shadow: 0 0 5px rgba(26, 188, 156, 0.5);
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #1abc9c, #16a085);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(135deg, #16a085, #1abc9c);
+    transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .report-section, .container {
+        margin: 10px;
+        padding: 20px;
+    }
+
+    header {
+        padding: 20px 10px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1abc9c;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #16a085;
+}
+    </style>
+</head>
+<body>
+    <%- include('../partials/header', {
+    }) %>
+
+<br><br>
+
+    <header>
+        <h1>Ocean Waste Report 2024</h1>
+        <p>Comprehensive Analysis of Marine Pollution and Environmental Impact</p>
+    </header>
+
+    <div class="report-section">
+        <h2>Global Ocean Waste Overview</h2>
+        <p>Marine pollution continues to be a critical environmental challenge. Our comprehensive research reveals alarming statistics about waste accumulation in the world's oceans.</p>
+        
+        <div class="statistic">
+            <p>Key Statistics:</p>
+            <ul>
+                <li>Approximately <strong>8 million tons</strong> of plastic enter the oceans annually</li>
+                <li>Over <strong>5.25 trillion</strong> pieces of plastic debris currently exist in the ocean</li>
+                <li>Marine waste affects <strong>661 marine species</strong> known to be impacted by pollution</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="impact-graphic">
+        <h2>Visual Representation of Ocean Waste Impact</h2>
+    </div>
+
+    <div class="report-section">
+        <h2>Waste Composition Breakdown</h2>
+        <p>Our analysis shows the primary types of waste found in marine environments:</p>
+        <ul>
+            <li>Plastic Packaging: 38%</li>
+            <li>Food Wrappers: 22%</li>
+            <li>Fishing Gear: 15%</li>
+            <li>Bottles and Containers: 12%</li>
+            <li>Other Waste: 13%</li>
+        </ul>
+    </div>
+
+    <div class="report-section">
+        <h2>Environmental Consequences</h2>
+        <p>The continuous accumulation of waste in our oceans leads to severe environmental challenges:</p>
+        <ul>
+            <li>Destruction of marine ecosystems</li>
+            <li>Microplastic contamination in food chains</li>
+            <li>Harm to marine wildlife</li>
+            <li>Potential long-term climate impacts</li>
+        </ul>
+    </div>
+    <div class="container">
+        <h1>Ocean Waste Report Form</h1>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location of Waste Observation</label>
+                <input type="text" id="location" name="location" required>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Date of Observation</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="waste-type">Type of Waste</label>
+                <select id="waste-type" name="waste-type" required>
+                    <option value="">Select Waste Type</option>
+                    <option value="plastic">Plastic</option>
+                    <option value="fishing-gear">Fishing Gear</option>
+                    <option value="industrial">Industrial Waste</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Detailed Description</label>
+                <textarea id="description" name="description" placeholder="Describe the waste you observed in detail" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="estimated-quantity">Estimated Quantity</label>
+                <select id="estimated-quantity" name="estimated-quantity" required>
+                    <option value="">Select Quantity</option>
+                    <option value="small">Small (Few pieces)</option>
+                    <option value="medium">Medium (Significant amount)</option>
+                    <option value="large">Large (Extensive coverage)</option>
+                </select>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Report</button>
+        </form>
+    </div>      
+    <%- include('../partials/footer', {
+    }) %>
+    <script>
+        $(document).ready(function(){
+            $('.slick-slider').slick({
+            dots: true,
+            infinite: true,
+            speed: 800,
+            fade: true,
+            cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
+            autoplay: true,
+            autoplaySpeed: 5000,
+            pauseOnHover: false,
+            arrows: true,
+            draggable: true,
+            swipe: true,
+            touchThreshold: 10,
+            waitForAnimate: true,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false
+                    }
+                }
+            ]
+        });
+    
+        window.onscroll = function() {
+        const navbar = document.getElementById("navbar");
+        
+        if (window.scrollY > 0) { // Jika posisi scroll lebih dari 0
+            navbar.classList.add("scrolled");
+        } else { // Jika posisi scroll di bagian atas halaman
+            navbar.classList.remove("scrolled");
+        }
+        };
+    
+            $(document).ready(function(){
+                $('.plastic-grid').slick({
+                    dots: true,
+                    infinite: true,
+                    speed: 500,
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 900,
+                    responsive: [
+                        {
+                            breakpoint: 1024,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 1
+                            }
+                        },
+                        {
+                            breakpoint: 600,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        }
+                    ]
+                });
+            });
+    
+                $(document).ready(function(){
+                $('.slick-slider').slick({
+                dots: true,
+                infinite: true,
+                speed: 800,
+                fade: true,
+                cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
+                autoplay: true,
+                autoplaySpeed: 5000,
+                pauseOnHover: false,
+                arrows: true,
+                draggable: true,
+                swipe: true,
+                touchThreshold: 10,
+                waitForAnimate: true,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            arrows: false
+                        }
+                    }
+                ]
+            });
+    
+            window.onscroll = function() {
+            const navbar = document.getElementById("navbar");
+            
+            if (window.scrollY > 0) { // Jika posisi scroll lebih dari 0
+                navbar.classList.add("scrolled");
+            } else { // Jika posisi scroll di bagian atas halaman
+                navbar.classList.remove("scrolled");
+            }
+        };
+            // Add smooth transition for slide content
+            $('.slick-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+                $(this).find('.slide-content').css('opacity', '0');
+            });
+            
+            $('.slick-slider').on('afterChange', function(event, slick, currentSlide){
+                $(this).find('.slick-active .slide-content').css('opacity', '1');
+            });
+            });
+    
+        // Add smooth transition for slide content
+        $('.slick-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+            $(this).find('.slide-content').css('opacity', '0');
+        });
+        
+        $('.slick-slider').on('afterChange', function(event, slick, currentSlide){
+            $(this).find('.slick-active .slide-content').css('opacity', '1');
+        });
+        });
+        </script>
+</body>
+</html>

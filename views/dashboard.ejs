@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <title>Planer - Plastic Ocean Recovery</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="website icon" type="png"
+    href="/image/logonew.png">
+</head>
+<body style="padding: 0%;"> 
+    <%- include('partials/header', {
+    }) %>
+
+    <br>
+    <br>
+
+    <div class="container">
+        <h1 style="color: black;">Welcome, <%= user.username %></h1>
+        <p style="text-align: center;">You have successfully logged in.</p>
+       
+        <div class="container">
+            <div class="container-normal" style="display: flex; justify-content: center; align-items: center;">
+                <div class="button-container">
+                    <button>
+                        <a href="/auth/dashboard" class="btn">Dashboard</a>
+                    </button>
+                    <button>
+                        <a href="/auth/edit-profile" class="btn">Edit Profile</a>
+                    </button>
+                    <button>
+                        <a href="/logout" class="btn btn-logout">Logout</a>
+                    </button>
+                </div>
+            </div>
+            <div class="nav-links">
+                <h2>Profile <%= user.username %></h2>
+            </div>
+        </div>
+    
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <table class="profile-table" style="width: 800px;">
+            <tbody>
+                <tr>
+                    <th>Nama</th>
+                    <td><%= user.name || '-' %></td>
+                </tr>
+                <tr>
+                    <th>Alamat</th>
+                    <td><%= user.alamat || '-' %></td>
+                </tr>
+                <tr>
+                    <th>Nomor Telepon</th>
+                    <td><%= user.nomor_telepon || '-' %></td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+    </div>
+    
+        
+    
+    <%- include('partials/footer', {
+    }) %>
+    <script>
+        $(document).ready(function(){
+            $('.slick-slider').slick({
+            dots: true,
+            infinite: true,
+            speed: 800,
+            fade: true,
+            cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
+            autoplay: true,
+            autoplaySpeed: 5000,
+            pauseOnHover: false,
+            arrows: true,
+            draggable: true,
+            swipe: true,
+            touchThreshold: 10,
+            waitForAnimate: true,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false
+                    }
+                }
+            ]
+        });
+    
+        window.onscroll = function() {
+        const navbar = document.getElementById("navbar");
+        
+        if (window.scrollY > 0) { // Jika posisi scroll lebih dari 0
+            navbar.classList.add("scrolled");
+        } else { // Jika posisi scroll di bagian atas halaman
+            navbar.classList.remove("scrolled");
+        }
+        };
+    
+            $(document).ready(function(){
+                $('.plastic-grid').slick({
+                    dots: true,
+                    infinite: true,
+                    speed: 500,
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 900,
+                    responsive: [
+                        {
+                            breakpoint: 1024,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 1
+                            }
+                        },
+                        {
+                            breakpoint: 600,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        }
+                    ]
+                });
+            });
+    
+                $(document).ready(function(){
+                $('.slick-slider').slick({
+                dots: true,
+                infinite: true,
+                speed: 800,
+                fade: true,
+                cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
+                autoplay: true,
+                autoplaySpeed: 5000,
+                pauseOnHover: false,
+                arrows: true,
+                draggable: true,
+                swipe: true,
+                touchThreshold: 10,
+                waitForAnimate: true,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            arrows: false
+                        }
+                    }
+                ]
+            });
+    
+            window.onscroll = function() {
+            const navbar = document.getElementById("navbar");
+            
+            if (window.scrollY > 0) { // Jika posisi scroll lebih dari 0
+                navbar.classList.add("scrolled");
+            } else { // Jika posisi scroll di bagian atas halaman
+                navbar.classList.remove("scrolled");
+            }
+        };
+            // Add smooth transition for slide content
+            $('.slick-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+                $(this).find('.slide-content').css('opacity', '0');
+            });
+            
+            $('.slick-slider').on('afterChange', function(event, slick, currentSlide){
+                $(this).find('.slick-active .slide-content').css('opacity', '1');
+            });
+            });
+    
+        // Add smooth transition for slide content
+        $('.slick-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+            $(this).find('.slide-content').css('opacity', '0');
+        });
+        
+        $('.slick-slider').on('afterChange', function(event, slick, currentSlide){
+            $(this).find('.slick-active .slide-content').css('opacity', '1');
+        });
+        });
+        </script>
+</body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+        <title>Planer - Plastic Ocean Recovery</title>
+        <link rel="stylesheet" href="/styles.css">
+        <link rel="website icon" type="png"
+        href="/image/logonew.png">
+        <style>
+            
+            .header {
+                text-align: center;
+                margin-bottom: 3rem;
+            }
+    
+            .header h1 {
+                color: #2e7d32;
+                margin-bottom: 1rem;
+                font-size: 2.5rem;
+            }
+    
+            .header p {
+                color: #666;
+                max-width: 800px;
+                margin: 0 auto;
+                line-height: 1.6;
+            }
+    
+            .plastic-grid {
+                margin: 0 -15px;
+            }
+    
+            .plastic-card {
+                padding: 2rem;
+                margin: 0 15px;
+                background: white;
+                border-radius: 12px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                text-align: center;
+                min-height: 400px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                transition: transform 0.3s ease;
+            }
+    
+            .plastic-card:hover {
+                transform: translateY(-5px);
+            }
+    
+            .plastic-number {
+                width: 40px;
+                height: 40px;
+                background: #2e7d32;
+                color: white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: bold;
+                margin-bottom: 1rem;
+            }
+    
+            .plastic-logo {
+                width: 100px;
+                height: 100px;
+                margin: 1rem 0;
+                object-fit: contain;
+            }
+    
+            .plastic-title {
+                font-size: 1.25rem;
+                color: #333;
+                margin: 1rem 0;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+    
+            .plastic-description {
+                color: #666;
+                line-height: 1.6;
+                flex-grow: 1;
+            }
+
+            .slick-prev, .slick-next {
+                width: 40px;
+                height: 40px;
+                z-index: 1;
+            }
+    
+            .slick-prev {
+                left: -50px;
+            }
+    
+            .slick-next {
+                right: -50px;
+            }
+    
+            .slick-prev:before, .slick-next:before {
+                font-size: 40px;
+                color: #2e7d32;
+            }
+    
+            .slick-dots li button:before {
+                font-size: 12px;
+                color: #2e7d32;
+            }
+    
+            .slick-dots li.slick-active button:before {
+                color: #2e7d32;
+            }
+        </style>
+        
+</head>
+    <body>
+        <%- include('partials/header', {
+        }) %>
+
+    <div class="slick-slider">
+        <div class="slide">
+            <img src="/image/plastic8.jpg" alt="Image 1">
+            <div class="slide-content">
+                <h1>Make movement for 
+                    <br>our earth</h1>
+                <a href="/views/dashboard.ejs" class="btn btn-primary">Explore More</a>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="/image/plastic9.jpg" alt="Image 2">
+            <div class="slide-content">
+                <h1>Create Your Own Small thing and effect the world</h1>
+                <a href="/views/dashboard.ejs" class="btn btn-primary">Explore More</a>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="/image/plastic7.jpg" alt="Image 2">
+            <div class="slide-content">
+                <h1></h1>
+                <a href="/views/dashboard.ejs" class="btn btn-primary">Explore More</a>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content" style="background-color: #f7feff;">
+        <iframe src="https://sipsn.menlhk.go.id/sipsn/public/data/timbulan" width="210%" height="600px" style="border-radius: 15px;"></iframe><br>
+        <iframe src="https://sipsn.menlhk.go.id/sipsn/public/data/komposisi" width="100%" height="600px" style="border-radius: 15px;"></iframe>
+        <iframe src="https://sipsn.menlhk.go.id/sipsn/public/data/sumber " width="100%" height="600px" style="border-radius: 15px;"></iframe>
+
+        <div class="content-left">
+
+            <p class="subtitle" style="text-align: center;">Information</p>
+            <h1 style="font-size: 2.5rem; color: #333; margin-bottom: 2rem;">Fishing Net </h1>
+            
+            <div class="product-section">
+                <h2>To safely help the marine creature trapped in the fishing net:</h2>
+                <p>The top priority should be disentangling the creature as quickly and gently as possible to minimize further harm. Carefully cut away any tightly tangled lines or netting using scissors or a knife, taking care not to damage the creature. If the creature appears injured, it may be best to carefully transport it to a marine rescue or rehabilitation center for professional treatment. Proper handling techniques and equipment like gloves may be necessary to avoid harming the creature or oneself. Once freed, the net and any remaining debris should be removed from the ocean to prevent further entanglement incidents.</p>
+            </div>
+
+            <a href="/pelajari-lebih-lanjut" class="cta-button">Learn More</a>
+        </div>
+        <div class="image-container">
+            <img src="/image/plastic5.jpg"  class="hero-image">
+        </div>
+    </main>
+
+<div class="home" style="padding: 60px;">
+        <div class="home-container" style="border-radius: 10px;">
+            <div class="header">
+                <h1>Guide to Plastic Types</h1>
+                <p style="text-align: center;">Understanding different types of plastic is crucial for proper recycling. Each type has unique properties and recycling requirements. Learn about the seven main types of plastic below.</p>
+            </div>
+            <div class="plastic-grid" >
+                <div class="plastic-card" style="justify-content: center; align-items: center;">
+                    <div class="plastic-number">1</div>
+                    <img class="plastic-logo" src="/image/plaslogo1.jpg" style="align-items: center; justify-content: center;" alt="PET plastic symbol">
+                    <h2 class="plastic-title">PET (Polyethylene Terephthalate)</h2>
+                    <p class="plastic-description">Commonly used in beverage bottles and food containers. Clear, strong, and lightweight. Highly recyclable and often turned into fibers for clothing or new containers.</p>
+                </div>
+
+                <div class="plastic-card">
+                    <div class="plastic-number">2</div>
+                    <img class="plastic-logo" src="/image/plaslogo2.png" alt="HDPE plastic symbol">
+                    <h2 class="plastic-title">HDPE (High-Density Polyethylene)</h2>
+                    <p class="plastic-description">Used in milk jugs, shampoo bottles, and cleaning products. Stiff plastic with good chemical resistance. Widely recycled into new containers, plastic lumber, and pipes.</p>
+                </div>
+
+                <div class="plastic-card">
+                    <div class="plastic-number">3</div>
+                    <img class="plastic-logo" src="/image/plaslogo3.jpg" alt="PVC plastic symbol">
+                    <h2 class="plastic-title">PVC (Polyvinyl Chloride)</h2>
+                    <p class="plastic-description">Found in plumbing pipes, window frames, and some food packaging. Durable and weather-resistant. Limited recycling options due to chemical composition.</p>
+                </div>
+
+                <div class="plastic-card">
+                    <div class="plastic-number">4</div>
+                    <img class="plastic-logo" src="/image/plaslogo4.png" alt="LDPE plastic symbol">
+                    <h2 class="plastic-title">LDPE (Low-Density Polyethylene)</h2>
+                    <p class="plastic-description">Used in squeezable bottles, shopping bags, and some food packaging. Flexible and transparent. Can be recycled into floor tiles, shipping envelopes, and new bags.</p>
+                </div>
+
+                <div class="plastic-card">
+                    <div class="plastic-number">5</div>
+                    <img class="plastic-logo" src="/image/plaslogo5.jpg" alt="PP plastic symbol">
+                    <h2 class="plastic-title">PP (Polypropylene)</h2>
+                    <p class="plastic-description">Found in food containers, bottle caps, and car parts. Heat-resistant and durable. Recyclable into battery cases, bins, and paint buckets.</p>
+                </div>
+
+                <div class="plastic-card">
+                    <div class="plastic-number">6</div>
+                    <img class="plastic-logo" src="/image/plaslogo6.webp" alt="PS plastic symbol">
+                    <h2 class="plastic-title">PS (Polystyrene)</h2>
+                    <p class="plastic-description">Used in disposable cutlery, packaging foam, and CD cases. Lightweight but environmentally problematic. Limited recycling options, best to avoid when possible.</p>
+                </div>
+
+                <div class="plastic-card">
+                    <div class="plastic-number">7</div>
+                    <img class="plastic-logo" src="/image/plaslogo7.webp" alt="Other plastics symbol">
+                    <h2 class="plastic-title">Other Plastics</h2>
+                    <p class="plastic-description">Includes mixed plastics and newer types like bioplastics. Properties vary widely. Recycling options depend on specific type and local facilities.</p>
+                </div>
+            </div>
+        </div>
+</div>
+
+<div class="sdg-extended-section" id="sdgexpand">
+    <div class="container" style="padding: 20px;">
+        <h2 class="section-title" style="text-align: center;">Our Commitment to Global Sustainability</h2>
+        
+        <div class="sdg-grid">
+            <div class="sdg-card sdg-6">
+                <div class="sdg-card-header">
+                    <h3>SDG 6: Clean Water and Sanitation</h3>
+                    <div class="sdg-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8zm0 18c-3.35 0-6-2.57-6-6.2 0-2.73 2.16-6.14 6-9.98 3.84 3.84 6 7.25 6 9.98 0 3.63-2.65 6.2-6 6.2zm-3-9.5h6l-3-4z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="sdg-card-content">
+                    <p>Clean water is crucial for marine ecosystems and human health. Our initiatives focus on:</p>
+                    <ul>
+                        <li>Preventing water pollution from plastic waste</li>
+                        <li>Protecting marine water quality</li>
+                        <li>Reducing chemical contamination in oceans</li>
+                        <li>Supporting sustainable water management</li>
+                    </ul>
+                    <div class="impact-metrics">
+                        <div class="metric">
+                            <h4>8 Million</h4>
+                            <p>Tons of plastic enter oceans annually</p>
+                        </div>
+                        <div class="metric">
+                            <h4>90%</h4>
+                            <p>Of marine pollution comes from land-based activities</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sdg-card sdg-13">
+                <div class="sdg-card-header">
+                    <h3>SDG 13: Climate Action</h3>
+                    <div class="sdg-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm8.57 7h-2.42c-.43-1.58-1.1-3.1-2-4.46 2.28.86 4.16 2.53 4.42 4.46zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h2.94c-.06.66-.2 1.32-.2 2s.14 1.34.2 2H4.26zm.82 2h2.42c.43 1.58 1.1 3.1 2 4.46-2.28-.86-4.16-2.53-4.42-4.46zm2.42-8H5.08c.26-1.93 2.14-3.6 4.42-4.46-.9 1.36-1.57 2.88-2 4.46zm7.5 6c0-.66-.14-1.34-.2-2h2.94c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-2.94c.06-.66.2-1.32.2-2zm-5.54-6c.43-1.43 1.08-2.76 1.91-3.96.83 1.2 1.48 2.53 1.91 3.96H8.78zm0 8h3.44c-.43 1.43-1.08 2.76-1.91 3.96-.83-1.2-1.48-2.53-1.91-3.96zm7.54 4.46c.9-1.36 1.57-2.88 2-4.46h2.42c-.26 1.93-2.14 3.6-4.42 4.46z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="sdg-card-content">
+                    <p>Climate change dramatically impacts our oceans. Our approach includes:</p>
+                    <ul>
+                        <li>Mitigating ocean warming and acidification</li>
+                        <li>Protecting marine biodiversity</li>
+                        <li>Reducing carbon footprint through recycling</li>
+                        <li>Promoting sustainable ocean conservation</li>
+                    </ul>
+                    <div class="impact-metrics">
+                        <div class="metric">
+                            <h4>30%</h4>
+                            <p>Of CO2 absorbed by oceans</p>
+                        </div>
+                        <div class="metric">
+                            <h4>0.3°C</h4>
+                            <p>Average ocean temperature increase since 1969</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sdg-call-to-action" >
+            <h3>Your Action Matters</h3>
+            <p>Every step we take towards sustainable practices contributes to global environmental preservation. Join us in protecting our planet's most precious resource - our oceans.</p>
+            <a href="/auth/report" class="action-button">Get Involved Now</a>
+        </div>
+    </div>
+</div>
+
+        <%- include('partials/footer', {
+        }) %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('.slick-slider').slick({
+        dots: true,
+        infinite: true,
+        speed: 800,
+        fade: true,
+        cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
+        autoplay: true,
+        autoplaySpeed: 5000,
+        pauseOnHover: false,
+        arrows: true,
+        draggable: true,
+        swipe: true,
+        touchThreshold: 10,
+        waitForAnimate: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false
+                }
+            }
+        ]
+    });
+
+    window.onscroll = function() {
+    const navbar = document.getElementById("navbar");
+    
+    if (window.scrollY > 0) { // Jika posisi scroll lebih dari 0
+        navbar.classList.add("scrolled");
+    } else { // Jika posisi scroll di bagian atas halaman
+        navbar.classList.remove("scrolled");
+    }
+    };
+
+        $(document).ready(function(){
+            $('.plastic-grid').slick({
+                dots: true,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 900,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+        });
+
+            $(document).ready(function(){
+            $('.slick-slider').slick({
+            dots: true,
+            infinite: true,
+            speed: 800,
+            fade: true,
+            cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
+            autoplay: true,
+            autoplaySpeed: 5000,
+            pauseOnHover: false,
+            arrows: true,
+            draggable: true,
+            swipe: true,
+            touchThreshold: 10,
+            waitForAnimate: true,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false
+                    }
+                }
+            ]
+        });
+
+        window.onscroll = function() {
+        const navbar = document.getElementById("navbar");
+        
+        if (window.scrollY > 0) { // Jika posisi scroll lebih dari 0
+            navbar.classList.add("scrolled");
+        } else { // Jika posisi scroll di bagian atas halaman
+            navbar.classList.remove("scrolled");
+        }
+    };
+        // Add smooth transition for slide content
+        $('.slick-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+            $(this).find('.slide-content').css('opacity', '0');
+        });
+        
+        $('.slick-slider').on('afterChange', function(event, slick, currentSlide){
+            $(this).find('.slick-active .slide-content').css('opacity', '1');
+        });
+        });
+
+    // Add smooth transition for slide content
+    $('.slick-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        $(this).find('.slide-content').css('opacity', '0');
+    });
+    
+    $('.slick-slider').on('afterChange', function(event, slick, currentSlide){
+        $(this).find('.slick-active .slide-content').css('opacity', '1');
+    });
+    });
+    </script>
+    </body>
+</html>

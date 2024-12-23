@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+        <title>Planer - Plastic Ocean Recovery</title>
+        <link rel="stylesheet" href="/styles.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+        <link rel="website icon" type="png"
+        href="/image/logonew.png">
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+            }
+            .leaflet-container {
+                height: 400px;
+                width: 600px;
+                max-width: 100%;
+                max-height: 100%;
+            }
+            
+            .earth-engine-container {
+                position: relative;
+                padding-bottom: 56.25%; /* 16:9 aspect ratio */
+                height: 0;
+                overflow: hidden;
+            }
+            
+            .earth-engine-container iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+        </style>
+</head>
+    <body>
+        <%- include('partials/header', {
+        }) %>
+
+        <div class="slick-slider">
+            <div class="slide">
+                <img src="/image/plastic3.jpg" alt="Image 1">
+                <div class="slide-content">
+                    <h1>Make movement for 
+                        <br>our earth</h1>
+                    <a href="/views/dashboard.ejs" class="btn btn-primary">Explore More</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="/image/plastic5.jpg" alt="Image 2">
+                <div class="slide-content">
+                    <h1>Create Your Own Small thing and effect the world</h1>
+                    <a href="#" class="btn btn-primary">Explore More</a>
+                </div>
+            </div>
+        </div>
+        <h1 style="color: #003b34;">[Deep Sweep Beep] - Clean Our Ocean!</h1>
+        <br>
+
+        <div class="earth-engine-container" style="width: 80%; margin: 20px auto; border-radius: 15px; overflow: hidden;">
+            <iframe 
+                src="https://scratch.mit.edu/projects/1098328360/embed" 
+                width="80%" 
+                height="300px" 
+                style="border:none;"
+                allowtransparency="true"
+                scrolling="no"
+                frameborder="0"
+                allowfullscreen>
+            </iframe>
+        </div>
+          
+        <%- include('partials/footer', {
+        }) %>
+    <script>
+        $(document).ready(function(){
+        $('.slick-slider').slick({
+        dots: true,
+        infinite: true,
+        speed: 800,
+        fade: true,
+        cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
+        autoplay: true,
+        autoplaySpeed: 5000,
+        pauseOnHover: false,
+        arrows: true,
+        draggable: true,
+        swipe: true,
+        touchThreshold: 10,
+        waitForAnimate: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false
+                }
+            }
+        ]
+    });
+
+    window.onscroll = function() {
+    const navbar = document.getElementById("navbar");
+    
+    if (window.scrollY > 0) { // Jika posisi scroll lebih dari 0
+        navbar.classList.add("scrolled");
+    } else { // Jika posisi scroll di bagian atas halaman
+        navbar.classList.remove("scrolled");
+    }
+};
+
+
+
+    // Add smooth transition for slide content
+    $('.slick-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        $(this).find('.slide-content').css('opacity', '0');
+    });
+    
+    $('.slick-slider').on('afterChange', function(event, slick, currentSlide){
+        $(this).find('.slick-active .slide-content').css('opacity', '1');
+    });
+    });
+    </script>
+    </body>
+</html>

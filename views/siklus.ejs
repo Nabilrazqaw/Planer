@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <title>Planer - Plastic Ocean Recovery</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="website icon" type="png"
+    href="/image/logonew.png">
+    <style>
+        body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f4f8;
+    color: #2c3e50;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    background-color: #C3E0E5;
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    color: #274472;
+}
+
+.plastic-cycle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.cycle-stage {
+    text-align: center;
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.cycle-stage:hover {
+    transform: scale(1.05);
+}
+
+.cycle-stage img {
+    max-width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.arrow {
+    font-size: 40px;
+    color: #2ecc71;
+}
+
+.marine-impact h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.impact-card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.impact-card:hover {
+    transform: translateY(-10px);
+}
+
+.impact-card img {
+    max-width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .plastic-cycle, .impact-grid {
+        flex-direction: column;
+        grid-template-columns: 1fr;
+    }
+
+    .arrow {
+        display: none;
+    }
+}
+    </style>
+</head>
+<body>
+    <%- include('partials/header', {
+    }) %>
+
+    <br><br><br>
+
+    <div class="container">
+        <header>
+            <h1>Plastic's Journey in Our Oceans</h1>
+            <p style="text-align: center;">From Land to Marine Ecosystem</p>
+        </header>
+
+        <section class="plastic-cycle">
+            <div class="cycle-stage">
+                <img src="/image/nomor1.jpg" alt="Plastic Origin">
+                <h2>Origin</h2>
+                <p>Plastic waste begins its journey from land - homes, industries, and urban areas.</p>
+            </div>
+            <div class="arrow">➤</div>
+            <div class="cycle-stage">
+                <img src="/image/nomor 2.jpg" alt="River Transportation">
+                <h2>River Transportation</h2>
+                <p>Rivers carry plastic waste from inland to coastal regions and oceans.</p>
+            </div>
+            <div class="arrow">➤</div>
+                <div class="cycle-stage">
+                    <img src="/image/nomor 3.jpg" alt="Microplastic Formation">
+                    <h2>Microplastic Formation</h2>
+                    <p>Large plastics break down into tiny microplastics, infiltrating marine ecosystems.</p>
+                </div>
+        </section>
+
+        <section class="marine-impact">
+            <h2>Impact on Marine Life</h2>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <img src="/image/nomor 4.jpg" alt="Fish Impact">
+                    <h3>Fish Contamination</h3>
+                    <p>Microplastics enter food chains, causing health issues for marine species.</p>
+                </div>
+                <div class="impact-card">
+                    <img src="/image/nomor 5.jpg" alt="Coral Damage">
+                    <h3>Coral Ecosystem Damage</h3>
+                    <p>Plastics smother and poison delicate coral reef environments.</p>
+                </div>
+                <div class="impact-card">
+                    <img src="/image/nomor 6.jpg" alt="Bird Entanglement">
+                    <h3>Wildlife Entanglement</h3>
+                    <p>Marine animals get trapped in plastic debris, leading to injury and death.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <br>
+    <%- include('partials/footer', {
+    }) %>
+    <script>
+        $(document).ready(function(){
+        $('.slick-slider').slick({
+        dots: true,
+        infinite: true,
+        speed: 800,
+        fade: true,
+        cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
+        autoplay: true,
+        autoplaySpeed: 5000,
+        pauseOnHover: false,
+        arrows: true,
+        draggable: true,
+        swipe: true,
+        touchThreshold: 10,
+        waitForAnimate: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false
+                }
+            }
+        ]
+    });
+
+    window.onscroll = function() {
+    const navbar = document.getElementById("navbar");
+    
+    if (window.scrollY > 0) { // Jika posisi scroll lebih dari 0
+        navbar.classList.add("scrolled");
+    } else { // Jika posisi scroll di bagian atas halaman
+        navbar.classList.remove("scrolled");
+    }
+};
+    // Add smooth transition for slide content
+    $('.slick-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        $(this).find('.slide-content').css('opacity', '0');
+    });
+    
+    $('.slick-slider').on('afterChange', function(event, slick, currentSlide){
+        $(this).find('.slick-active .slide-content').css('opacity', '1');
+    });
+    });
+    </script>
+</body>
+</html>
